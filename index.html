@@ -1,1 +1,1078 @@
-hello world
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<style type="text/css">
+	body {
+	  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	}
+	form {
+		margin-block-end: 20vw;
+	}
+	h1 {
+		font-size: 8vw;
+		padding: 4vw;
+	}
+	h2, h4 {
+		font-size: 6.8vw;
+		padding: 2vw 0;
+	}
+	h4 {
+		font-size: 6vw;
+	}
+	legend, summary {
+		font-size: 5.5vw;
+		padding: 2vw 0;
+	}
+	p, label, li:not(.nav-item), option, a.btn.btn-primary {
+		font-size: 4vw;
+	}
+	label.btn
+	{
+		height: calc(9vw);
+		font-size: 4vw;
+		padding: 2vw 3vw;
+		margin: 1vw;
+	}	
+	label.btn:not(.active) {
+		color: darkgray;
+		background-color: lightgray;
+		border-color: gray;	 	
+	}
+	a.btn-audio,
+	label.btn-audio, 
+	span.btn-audio,
+	label.btn-image, 
+	span.btn-image 	
+	{
+		height: calc(9vw);
+		font-size: 5vw;
+		margin: 1vw 0vw 0vw 1vw;
+		padding: 0 3vw;
+		border-radius: 50%;
+	 }	
+	label.btn-audio, 
+	label.btn-image {
+		background: #006600;
+		text-align: center;
+		color: white;
+		border: none;
+		transition: all 0.2s;
+		padding-top: 2vw;
+	}
+	label.btn-image {
+		background: gray;
+	}
+	span.btn-audio, span.btn-image {
+		padding: 2vw;
+	}
+	a.dropdown-item
+	{
+		width: 50vw;
+		height: calc(10vw);
+		padding: 1vw 2vw;
+		font-size: 6vw;
+		line-height: 8vw;
+		border-radius: 1vw;
+		margin: 1vw;
+		text-overflow: ellipsis;
+		overflow:hidden;
+	}
+	a.btn,
+	input.form-control.form-control-lg, 
+	select.form-control.form-control-lg, 
+	input.form-control-file.form-control-lg {
+		height: calc(10vw);
+		padding: 1vw 2vw;
+		font-size: 6vw;
+		line-height: 8vw;
+		border-radius: 1vw;
+		margin: 1vw;
+		width: 95%;
+	}
+
+	input.form-control.form-control-lg.members {
+		width: calc(8vw);
+		height: calc(10vw);
+		padding: 0vw;
+		border-radius: 1vw;
+		margin: 1vw;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	input.form-control.form-control-lg, 
+	select.form-control.form-control-lg, 
+	input.form-control-file.form-control-lg,
+	textarea {
+		background: none;
+	}
+
+	textarea.h1 {
+		height: calc(32vw);
+		width: 100%;		
+		padding: 1vw 2vw;
+		font-size: 8vw;
+		line-height: 10vw;
+		border: none;
+		margin: 1vw;
+	}
+	textarea.p {
+		height: calc(21vw);
+		width: 100%;
+		padding: 1vw 2vw;
+		font-size: 5vw;
+		line-height: 7vw;
+		border: none;
+		margin: 1vw;
+	}
+	textarea.form-control-file.form-control-lg {
+		height: calc(24vw);
+		padding: 1vw 2vw;
+		font-size: 6vw;
+		line-height: 8vw;
+		border: none;
+		margin: 1vw;
+	}
+	input.h3.form-control.form-control-lg {
+		font-size: 6.5vw;
+		border: none;
+		width: 85%;	
+		display: inline;
+		padding: 0;
+		margin: 0;
+	}
+	input.h4.form-control.form-control-lg {
+		font-size: 6vw;
+		border: none;			
+		width: 85%;	
+		display: inline;
+	}
+	.hidden,
+	fieldset.recordings,
+	figcaption,
+	label[for*="alt"],
+	label[for*="-audio-url"],
+	label[for*="-image-upload"],
+	input[id*="alt"],
+	input[id*="-audio-url"],
+	input[for*="-image-upload"],
+	input[type="file"][class="audio"],
+	input[type="file"][class="image"],
+	.voiceAd,
+	.dailyPush,
+	.multiTribe,
+	.yt,
+	.upload
+	{
+		display: none;
+	}
+	div.hero {
+		position: relative;
+		margin: 0 -15px 2px;
+	}
+	iframe {
+		display: none;
+		margin: 2% -5%;
+	}
+	#overlay {
+	/*input[type="file"][class="image"] {*/
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background: rgba(0, 0, 0, 0);
+	  transition: background 0.5s ease;
+	  text-align: center;
+	}
+	#overlay label {
+	  position: relative;
+	  top: 40%;
+	  width: 11vw;
+	  margin: auto;
+	  transition: opacity 0.5s ease;
+	  opacity: 0;
+	}
+	.hero:hover #overlay {
+	  display: block;
+	  background: rgba(0, 0, 0, .3);
+	}
+	.hero:hover #overlay label {
+	  opacity: 1;
+	}
+	hr {
+		height: 0px;
+		border: none;
+		border-top: 2vw solid black;
+	}
+	.card-body {
+		padding: 0;
+	}
+	.card {
+		background: transparent;
+	}
+	.mt-5 {
+		margin-top: 5vw;
+	}
+	.report {
+		height: 30vw;
+		width: 98%;
+		margin: 1vw;
+		padding: 1vw;
+		border: 1px solid black;
+		overflow: auto;
+	}
+	.report ol {
+		width: 145vw;
+	}
+	.dest-type {
+		color: black;
+	}
+	.voice-ad {
+		background: #fff9e6;
+	}
+	.daily-push {
+		background: #e6f2ff;
+	}
+	.multi-tribe {
+		background: #ebfaeb;
+	}
+	textarea, input {
+		background: transparent;
+	}
+	.navbar-nav .dropdown-menu {
+		background: transparent;
+		border: none;
+	}
+	.navbar-dark.bg-dark {
+		background-color: black!important;
+	}
+	nav img {
+		width: 80px;
+		height: auto;
+	}
+	button:focus,
+	.btn:focus {
+		border-color : purple;
+	}
+	#body input:focus, textarea:focus, .btn:focus, button:focus, summary:focus {
+	  border-color: #347fb6;
+	  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(52, 127, 182, 0.6);
+	  outline: 0 none;
+	}
+	.intro .btn.dest-type {
+		width: 50%;
+	}
+	.intro li {
+		list-style: none;
+	}
+	.intro ul {
+		padding-left: 0;
+	}
+	.icon {
+		width: 9vw;
+		height: auto;
+		margin-left: 2px;
+	}
+	.btn-primary {
+		background-color: #3380b6;
+		border-color: #3380b6;
+	}
+	.toast {
+		background: green;
+		display: none;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    max-width: 100%;
+	    min-width: 100%;
+	    z-index: 10;
+	}
+	.toast-header img {
+		height: 30px;
+		width: auto;
+	}
+	.voiceAd .btn {
+		width: 70%;
+	}
+	input.form-control.form-control-lg.yt.url {
+		width: 70%;
+		font-size: 5vw;
+	}
+	input.form-control.form-control-lg.yt.cue {
+		width: 20%;
+		font-size: 5vw;
+	}
+	#body:not(.voice-ad):not(.daily-push):not(.multi-tribe) #ga_option_0_button {
+		width: 95%;
+	}
+	</style>
+</head>
+<body id="body">
+	<a name="top"></a>
+	<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+		<div class="toast-header">
+			<img src="uploads/ga.png" class="rounded mr-2" alt="...">
+			<strong class="mr-auto">Autosaving Changes...</strong>
+			<small>.04 sec ago</small>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	</div>	
+	<form action="voicedestination.php" method="post" enctype="multipart/form-data" id="form">
+		<div class="container-fluid">
+			<div class="hero">
+				<img src="https://02b7cf4.netsolhost.com/voicedestination/uploads/nets.jpg" class="card-img-top" alt="">
+				<div id="overlay">
+					<label class="btn-image voiceAd dailyPush multiTribe" for="image"><i class="fa fa-camera"></i></label>
+					<input type="file" class="image" name="image" id="image" accept="image/*" capture="camera" onchange="form.submit()">
+				</div>
+			</div>
+			<h1 class="intro text-center" id="title">Talk to The Nets about Tonight's Game</h1>
+			<textarea class="h1 multiTribe voiceAd dailyPush" id="ga_name" placeholder="Hey Google, Talk to the Voice of My Brand">Talk to The Nets about Tonight's Game</textarea>
+
+			<iframe
+				width="110%" 
+				height="35%" 
+				frameborder="0" 
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+			<p class="card-text multiTribe voiceAd dailyPush site"><textarea class="p" placeholder="Talk to The Brooklyn Nets about tonight's game. Find out what they're thinking about as far as team preparedness and strategy go."></textarea></p>	   
+			<p class="card-text voiceAd site">
+				<a class="btn btn-primary" data-toggle="collapse" href="#collapse_button_0" role="button" aria-expanded="false" aria-controls="collapse_button_0" id="ga_option_0_button">
+					Hear More				</a>
+				<label class="btn-audio admin" for="option_0_audio_file"><i class="fa fa-microphone"></i></label>
+				<input id="option_0_audio_file" type="file" class="audio" accept="audio/*" capture />
+				<span class="btn-audio play admin"><i class="fa fa-play"></i></span>
+
+				<input type="text" placeholder="YouTube URL w/start cue" id="ga_option_0_yt_audio" class="yt url form-control form-control-lg" value="https://www.youtube.com/embed/E9QSJTpKqjk" />
+				<input 
+					type="text" 
+					id="cue_0" 
+					name="cue_0" 
+					list="until"
+					class="form-control form-control-lg yt cue" 
+					placeholder="for"
+					/>
+				<datalist id="until">
+					<option value=":05">
+					<option value=":10">
+					<option value=":15">
+				</datalist>			
+			</p>
+			<div class="collapse" id="collapse_button_0">
+				<div class="card card-body">
+					<input 
+					type="text" 
+					id="ga_option_0_button_text" 
+					name="ga_option_0_button_text" 
+					class="form-control form-control-lg" 
+					value="Hear More" 
+					placeholder="Option 0 Button Text"
+					onkeyup="javascript:document.getElementById('ga_option_0_button').innerHTML = this.value" 
+					/>
+					<input 
+					type="text" 
+					id="ga_option_0_button_url" 
+					name="ga_option_0_button_url" 
+					class="form-control form-control-lg" 
+					value="https://www.youtube.com/embed/E9QSJTpKqjk" 
+					placeholder="Option 0 Button URL" 
+					onkeyup="javascript:document.getElementById('ga_option_0_button').href = this.value" 
+					/>
+				</div>
+			</div>
+
+			<figure class="hidden">
+				<figcaption></figcaption>
+				<audio id="option_0_audio_url" controls src="">Your browser does not support the <code>audio</code> element.</audio>
+			</figure>	
+
+			<details class="dailyPush site">
+				<summary><input type="text" class="h3 form-control form-control-lg" value="How's Everything?" placeholder="Option 1 Title" /></summary>
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-subtitle"><input type="text" class="h4 form-control form-control-lg" value="Daily Check-In" placeholder="Option 1 Subtitle" /></h4>
+						<p class="card-text"><textarea class="p" placeholder="Talk about what's been going on since your last visit."></textarea></p>
+
+						<select class="form-control form-control-lg multiTribe user">
+							<option>For...</option>
+							<option>Unregistered Guests</option>
+							<option>Tribe 1</option>
+							<option>Tribe 2</option>
+						</select>
+
+						<div class="btn-group user admin">
+							<div class="btn-group btn-group-toggle" data-toggle="buttons">
+								<label class="btn btn-dark">
+									<input type="checkbox" name="option_1-sunday" id="option_1-sunday" autocomplete="off">S
+								</label>
+								<label class="btn btn-info">
+									<input type="checkbox" name="option_1-monday" id="option_1-monday" autocomplete="off">M
+								</label>
+								<label class="btn btn-danger">
+									<input type="checkbox" name="option_1-tuesday" id="option_1-tuesday" autocomplete="off">T
+								</label>
+								<label class="btn btn-warning">
+									<input type="checkbox" name="option_1-wednesday" id="option_1-wednesday" autocomplete="off">W
+								</label>
+								<label class="btn btn-primary">
+									<input type="checkbox" name="option_1-thursday" id="option_1-thursday" autocomplete="off">T
+								</label>
+								<label class="btn btn-success">
+									<input type="checkbox" name="option_1-friday" id="option_1-friday" autocomplete="off">F
+								</label>
+								<label class="btn btn-dark">
+									<input type="checkbox" name="option_1-saturday" id="option_1-saturday" autocomplete="off">S
+								</label>
+							</div>
+							<label class="btn-audio" for="option_1_audio_file"><i class="fa fa-microphone"></i></label>
+							<input id="option_1_audio_file" type="file" class="audio" accept="audio/*" capture />
+							<span class="btn-audio play"><i class="fa fa-play"></i></span>
+							<input type="hidden" id="intent" name="intent" value="option_1" />
+							<input type="hidden" id="dayof" name="dayof" value="mon" />
+						</div>
+
+						<input type="text" placeholder="YouTube URL w/start cue" id="ga_option_1_yt_audio" class="yt url form-control form-control-lg" />
+						<input 
+							type="text" 
+							id="cue_1" 
+							name="cue_1" 
+							list="until"
+							class="form-control form-control-lg yt cue" 
+							placeholder="for"
+							/>
+
+						<figure class="hidden">
+							<figcaption></figcaption>
+							<audio id="option_1_audio_url" controls src="https://02b7cf4.netsolhost.com/audio/mark_cuban_1.mp3">Your browser does not support the <code>audio</code> element.</audio>
+						</figure>	   
+						<p class="card-text mt-5">
+							<a class="btn btn-primary" data-toggle="collapse" href="#collapse_button_1" role="button" aria-expanded="false" aria-controls="collapse_button_1" id="ga_option_1_button">
+								Check-In via Email							</a>
+						</p>
+						<div class="collapse" id="collapse_button_1">
+							<div class="card card-body">
+								<input 
+								type="text" 
+								id="ga_option_1_button_text" 
+								name="ga_option_1_button_text" 
+								class="form-control form-control-lg" 
+								value="Check-In via Email" 
+								placeholder="Option 1 Button Text"
+								onkeyup="javascript:document.getElementById('ga_option_1_button').innerHTML = this.value" 
+								/>
+								<input 
+								type="text" 
+								id="ga_option_1_button_url" 
+								name="ga_option_1_button_url" 
+								class="form-control form-control-lg" 
+								value="#" 
+								placeholder="Option 1 Button URL" 
+								onkeyup="javascript:document.getElementById('ga_option_1_button').href = this.value" 
+								/>
+							</div>
+						</div>
+					</div>
+				</div>			
+			</details>
+
+			<details class="dailyPush site">
+				<summary><input type="text" class="h3 form-control form-control-lg" value="What's New?" placeholder="Option 2 Title" /></summary>
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-subtitle"><input type="text" class="h4 form-control form-control-lg" value="Upcoming Happenings" placeholder="Option 2 Subtitle" /></h4>
+						<p class="card-text"><textarea class="p" placeholder="Find out about scheduled events and future plans."></textarea></p>
+
+						<select class="form-control form-control-lg multiTribe user">
+							<option>For...</option>
+							<option>Unregistered Guests</option>
+							<option>Tribe 1</option>
+							<option>Tribe 2</option>
+						</select>
+
+						<div class="btn-group user admin">
+							<div class="btn-group btn-group-toggle" data-toggle="buttons">
+								<label class="btn btn-dark">
+									<input type="checkbox" name="option_2-sunday" id="option_2-sunday" autocomplete="off">S
+								</label>
+								<label class="btn btn-info">
+									<input type="checkbox" name="option_2-monday" id="option_2-monday" autocomplete="off">M
+								</label>
+								<label class="btn btn-danger">
+									<input type="checkbox" name="option_2-tuesday" id="option_2-tuesday" autocomplete="off">T
+								</label>
+								<label class="btn btn-warning">
+									<input type="checkbox" name="option_2-wednesday" id="option_2-wednesday" autocomplete="off">W
+								</label>
+								<label class="btn btn-primary">
+									<input type="checkbox" name="option_2-thursday" id="option_2-thursday" autocomplete="off">T
+								</label>
+								<label class="btn btn-success">
+									<input type="checkbox" name="option_2-friday" id="option_2-friday" autocomplete="off">F
+								</label>
+								<label class="btn btn-dark">
+									<input type="checkbox" name="option_2-saturday" id="option_2-saturday" autocomplete="off">S
+								</label>
+							</div>
+							<label class="btn-audio" for="option_2_audio_file"><i class="fa fa-microphone"></i></label>
+							<input id="option_2_audio_file" type="file" class="audio" accept="audio/*" capture />
+							<span class="btn-audio play"><i class="fa fa-play"></i></span>
+							<input type="hidden" id="intent" name="intent" value="option_2" />
+							<input type="hidden" id="dayof" name="dayof" value="mon" />
+						</div>
+
+						<input type="text" placeholder="YouTube URL w/start cue" id="ga_option_2_yt_audio" class="yt url form-control form-control-lg" />
+						<input 
+							type="text" 
+							id="cue_2" 
+							name="cue_2" 
+							list="until"
+							class="form-control form-control-lg yt cue" 
+							placeholder="for"
+							/>
+
+						<figure class="hidden">
+							<figcaption></figcaption>
+							<audio id="option_2_audio_url" controls src="https://02b7cf4.netsolhost.com/audio/mark_cuban_2.mp3">Your browser does not support the <code>audio</code> element.</audio>
+						</figure>	   
+						<p class="card-text mt-5">
+							<a class="btn btn-primary" data-toggle="collapse" href="#collapse_button_2" role="button" aria-expanded="false" aria-controls="collapse_button_2" id="ga_option_2_button">
+								More Daily Digest							</a>
+						</p>
+						<div class="collapse" id="collapse_button_2">
+							<div class="card card-body">
+								<input 
+								type="text" 
+								id="ga_option_2_button_text" 
+								name="ga_option_2_button_text" 
+								class="form-control form-control-lg" 
+								value="More Daily Digest" 
+								placeholder="Option 2 Button Text"
+								onkeyup="javascript:document.getElementById('ga_option_2_button').innerHTML = this.value" 
+								/>
+								<input 
+								type="text" 
+								id="ga_option_2_button_url" 
+								name="ga_option_2_button_url" 
+								class="form-control form-control-lg" 
+								value="#" 
+								placeholder="Option 2 Button URL" 
+								onkeyup="javascript:document.getElementById('ga_option_2_button').href = this.value" 
+								/>
+							</div>
+						</div>
+					</div>
+				</div>			
+			</details>
+
+			<details class="dailyPush site">
+				<summary><input type="text" class="h3 form-control form-control-lg" value="Why Now?" placeholder="Option 3 Title" /></summary>
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-subtitle"><input type="text" class="h4 form-control form-control-lg" value="Today's Backstory" placeholder="Option 3 Subtitle" /></h4>
+						<p class="card-text"><textarea class="p" placeholder="Find out about scheduled events and future plans."></textarea></p>
+
+						<select class="form-control form-control-lg multiTribe user">
+							<option>For...</option>
+							<option>Unregistered Guests</option>
+							<option>Tribe 1</option>
+							<option>Tribe 2</option>
+						</select>
+
+						<div class="btn-group user admin">
+							<div class="btn-group btn-group-toggle" data-toggle="buttons">
+								<label class="btn btn-dark">
+									<input type="checkbox" name="option_3-sunday" id="option_3-sunday" autocomplete="off">S
+								</label>
+								<label class="btn btn-info">
+									<input type="checkbox" name="option_3-monday" id="option_3-monday" autocomplete="off">M
+								</label>
+								<label class="btn btn-danger">
+									<input type="checkbox" name="option_3-tuesday" id="option_3-tuesday" autocomplete="off">T
+								</label>
+								<label class="btn btn-warning">
+									<input type="checkbox" name="option_3-wednesday" id="option_3-wednesday" autocomplete="off">W
+								</label>
+								<label class="btn btn-primary">
+									<input type="checkbox" name="option_3-thursday" id="option_3-thursday" autocomplete="off">T
+								</label>
+								<label class="btn btn-success">
+									<input type="checkbox" name="option_3-friday" id="option_3-friday" autocomplete="off">F
+								</label>
+								<label class="btn btn-dark">
+									<input type="checkbox" name="option_3-saturday" id="option_3-saturday" autocomplete="off">S
+								</label>
+							</div>
+							<label class="btn-audio" for="option_3_audio_file"><i class="fa fa-microphone"></i></label>
+							<input id="option_3_audio_file" type="file" class="audio" accept="audio/*" capture />
+							<span class="btn-audio play"><i class="fa fa-play"></i></span>
+							<input type="hidden" id="intent" name="intent" value="option_3" />
+							<input type="hidden" id="dayof" name="dayof" value="mon" />
+						</div>
+
+						<input type="text" placeholder="YouTube URL w/start cue" id="ga_option_3_yt_audio" class="yt url form-control form-control-lg" />
+						<input 
+							type="text" 
+							id="cue_3" 
+							name="cue_3" 
+							list="until"
+							class="form-control form-control-lg yt cue" 
+							placeholder="for" />
+
+						<figure class="hidden">
+							<figcaption></figcaption>
+							<audio id="option_3_audio_url" controls src="https://02b7cf4.netsolhost.com/audio/mark_cuban_3.mp3">Your browser does not support the <code>audio</code> element.</audio>
+						</figure>	   
+						<p class="card-text mt-5">
+							<a class="btn btn-primary" data-toggle="collapse" href="#collapse_button_2" role="button" aria-expanded="false" aria-controls="collapse_button_2" id="ga_option_3_button">
+								Deal of the Day							</a>
+						</p>
+						<div class="collapse" id="collapse_button_2">
+							<div class="card card-body">
+								<input 
+								type="text" 
+								id="ga_option_3_button_text" 
+								name="ga_option_3_button_text" 
+								class="form-control form-control-lg" 
+								value="Deal of the Day" 
+								placeholder="Option 3 Button Text"
+								onkeyup="javascript:document.getElementById('ga_option_3_button').innerHTML = this.value" 
+								/>
+								<input 
+								type="text" 
+								id="ga_option_3_button_url" 
+								name="ga_option_3_button_url" 
+								class="form-control form-control-lg" 
+								value="#" 
+								placeholder="Option 3 Button URL" 
+								onkeyup="javascript:document.getElementById('ga_option_3_button').href = this.value" 
+								/>
+							</div>
+						</div>
+					</div>
+				</div>			
+			</details>		
+
+			<hr class="multiTribe voiceAd dailyPush" />
+
+			<details class="multiTribe voiceAd dailyPush">
+				<summary>General Settings</summary>
+				<fieldset class="dailyPush multiTribe">
+					<select class="form-control form-control-lg">
+						<option>Record / Play</option>
+						<option>Greetings</option>
+						<option>Goodbyes</option>
+						<option>Say Agains</option>
+					</select>
+
+					<div class="btn-group">
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-dark">
+								<input type="checkbox" name="general-sunday" id="general-sunday" autocomplete="off">S
+							</label>
+							<label class="btn btn-info">
+								<input type="checkbox" name="general-monday" id="general-monday" autocomplete="off">M
+							</label>
+							<label class="btn btn-danger">
+								<input type="checkbox" name="general-tuesday" id="general-tuesday" autocomplete="off">T
+							</label>
+							<label class="btn btn-warning">
+								<input type="checkbox" name="general-wednesday" id="general-wednesday" autocomplete="off">W
+							</label>
+							<label class="btn btn-primary">
+								<input type="checkbox" name="general-thursday" id="general-thursday" autocomplete="off">T
+							</label>
+							<label class="btn btn-success">
+								<input type="checkbox" name="general-friday" id="general-friday" autocomplete="off">F
+							</label>
+							<label class="btn btn-dark">
+								<input type="checkbox" name="general-saturday" id="general-saturday" autocomplete="off">S
+							</label>
+						</div>
+						<label class="btn-audio" for="option_0_audio_file"><i class="fa fa-microphone"></i></label>
+						<input id="option_0_audio_file" type="file" class="audio" accept="audio/*" capture />
+						<span class="btn-audio play"><i class="fa fa-play"></i></span>
+						<input type="hidden" id="intent_general" name="intent_general" value="general" />
+						<input type="hidden" id="dayof_general" name="dayof_general" value="mon" />
+					</div>
+
+					<figure class="hidden">
+						<figcaption></figcaption>
+						<audio id="general_audio_url" controls src="">Your browser does not support the <code>audio</code> element.</audio>
+					</figure>
+				</fieldset>
+
+				<fieldset>
+					<legend>Owner(s)</legend>
+					<label for="action-owners" class="hidden">Owner(s)</label>
+					<textarea class="p" id="action-owners" name="action-owners" placeholder="Authorized Admin Emails">support@voicengage.co
+you@myourbrand.com</textarea>				
+				</fieldset>
+			</details>
+			<details class="multiTribe">
+				<summary>Manage Tribes</summary>
+				<fieldset>
+					<legend>Tribes</legend>
+					<label for="action-tribe" class="hidden">Tribe</label>
+					<input 
+					type="text" 
+					id="tribe" 
+					name="tribe" 
+					list="tribes"
+					class="form-control form-control-lg" 
+					placeholder="Choose or Create a Tribe"
+					onkeyup="javascript:document.getElementById('ga_option_3_button').innerHTML = this.value" 
+					/>
+					<datalist id="tribes">
+						<option value="Tribe 1">
+						<option value="Tribe 2">
+						<option value="Gold Circle">
+						<option value="Bronze Members">
+						<option value="Platinum Club">
+					</datalist>			
+				</fieldset>
+				<fieldset>
+					<legend>Members</legend>
+					<div class="list-group checkbox-list-group">
+						<div class="list-group-item">
+							<label>
+								<input type="checkbox" class="form-control form-control-lg members" />
+								<span class="list-group-item-text">
+									<i class="fa fa-fw"></i> thedaryllama@... 
+									<a href="#">1</a> 
+									<a href="#">2</a>
+									<a href="#">3</a>
+								</span>
+							</label>
+						</div>
+						<div class="list-group-item">
+							<label>
+								<input type="checkbox" class="form-control form-control-lg members" />
+								<span class="list-group-item-text">
+									<i class="fa fa-fw"></i> peterpoland@...
+								</span>
+							</label>
+						</div>
+						<div class="list-group-item">
+							<label>
+								<input type="checkbox" class="form-control form-control-lg members" />
+								<span class="list-group-item-text">
+									<i class="fa fa-fw"></i> derekhdodge@...
+								</span>
+							</label>
+						</div>
+						<div class="list-group-item">
+							<label>
+								<input type="checkbox" class="form-control form-control-lg members" />
+								<span class="list-group-item-text">
+									<i class="fa fa-fw"></i> dondodge@...
+								</span>
+							</label>
+						</div>
+					</div>
+				</fieldset>
+				</details>
+				<details class="multiTribe voiceAd dailyPush">
+					<summary>Reports</summary>
+					<fieldset>
+						<select class="form-control form-control-lg">
+							<option>Last 24 Hours</option>
+							<option>Converational Turns</option>
+							<option>Conversion Stats</option>
+							<option>Session Paths</option>
+						</select>
+					</fieldset>
+					<div class="report">
+						<ol>
+													</ol>
+					</div>
+				</details>
+				<details id="terms" name="#terms" class="multiTribe voiceAd dailyPush site">
+					<summary>Terms of Service</summary>
+					<div>
+						<h1>Terms of Service for the "<span class="ga_name"></span>" Google Action</h1>
+						<p>This Terms of Service notice discloses the terms of service for the <em  class="ga_name"></em> Google Action.</p>
+						<p>Our Responsibilities. We are responsible for:</p>
+						<p>(a) Customer service and claims, and communications and reporting among the individuals and entities involved in providing our Services;</p>
+						<p>(b) Protecting any and all personally identifiable information (PII) you share with us;</p>
+						<p>(c) Safeguarding of accounts, usernames, and passwords;</p>
+						<p>(d) All necessary rights to grant the licenses in this Agreement and to provide our Services through Actions on Google;</p>
+						<p>(e) Providing accurate information. All information, authorizations, and Settings we provide are complete, correct, and current;</p>
+						<p>(f) Avoiding deceptive practices. We do not engage in deceptive, misleading, and/or unethical practices in connection with our Services or their promotion and will make no false or misleading representations with regard to Google or its products or services;</p>
+						<p>(g) Compliance with Laws. We comply with all applicable laws, rules, and regulations in connection with Actions on Google;</p>
+						<p>(h) Authorization to Act. We are authorized to act on behalf of, have bound to these Terms, and will be liable under these Terms for, each individual or entity involved in our Services.</p>
+						<p>If you feel that we are not abiding by this privacy policy, you should contact us immediately via telephone at +16177856994 or via email at support@voicengage.co.</p>
+					</div>
+				</details>
+				<details id="policy" name="#policy" class="multiTribe voiceAd dailyPush site">
+					<summary>Privacy Policy</summary>
+					<div>
+
+						<h1>Privacy Notice for the "<span class="ga_name"></span>" Google Action</h1>
+						<p>This privacy notice discloses the privacy practices for the <em class="ga_name"></em> Google Action.</p>
+						<p>This privacy notice applies solely to information collected by this Google Assistant Action. It will notify you of the following:</p>
+						<ul>
+							<li>What personally identifiable information is collected from you through the Action, how it is used and with whom it may be shared.</li>
+							<li>What choices are available to you regarding the use of your data.</li>
+							<li>The security procedures in place to protect the misuse of your information.</li>
+							<li>How you can correct any inaccuracies in the information.</li>
+						</ul>
+						<h2>Information Collection, Use, and Sharing</h2>
+						<p>We are the sole owners of the information collected on this Action.</p>
+						<p>We only have access to/collect information that you voluntarily give us via email or other direct contact from you.</p>
+						<p>We will not sell or rent this information to anyone.</p>
+						<p>We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to ship an order.</p>
+						<p>Unless you ask us not to, we may contact you via email in the future to tell you about specials, new products or services, or changes to this privacy policy.</p>
+
+						<h2>Your Access to and Control Over Information</h2>
+						<p>You may opt out of any future contacts from us at any time.</p>
+						<p>You can do the following at any time by contacting us via support@voicengage.co or +16177856994:</p>
+						<ul>
+							<li>See what data we have about you, if any.</li>
+							<li>Change/correct any data we have about you.</li>
+							<li>Have us delete any data we have about you.</li>
+							<li>Express any concern you have about our use of your data.</li>
+						</ul>
+
+						<h2>Security</h2>
+
+						<p>We take precautions to protect your information. When you submit sensitive information via the Action, your information is protected both online and offline.</p>
+
+						<p>Wherever we collect sensitive information (such as credit card data), that information is encrypted and transmitted to us in a secure way. You can verify this by looking for a lock icon in the address bar and looking for "https" at the beginning of the address of the Web page.</p>
+
+						<p>While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information. The computers/servers in which we store personally identifiable information are kept in a secure environment.</p>
+
+						<p>If you feel that we are not abiding by this privacy policy, you should contact us immediately via telephone at +16177856994 or via email at support@voicengage.co.</p>
+					</div>
+				</details>
+				<div class="intro admin">
+					<p class="text-center">Create your Voice Destination<sup>&reg;</sup> in 4 minutes:<sup>*</sup></p>
+					<ul>
+						<li><a class="btn dest-type voice-ad" href="#" onclick="javascript:voiceAd()" data-toggle="collapse">Voice Ad</a> Single Campaign</li>
+						<li><a class="btn dest-type daily-push" href="#" onclick="javascript:dailyPush()" data-toggle="collapse">Daily Push</a> Brand Destination</li>
+						<li><a class="btn dest-type multi-tribe" href="#" onclick="javascript:multiTribe()" data-toggle="collapse">Multi-Tribe</a> Personalized Audio</li>
+					</ul>
+					<p class="text-right">
+						<em><small><sup>*</sup> Live in 24hrs. on 1.1b iOS and Android devices with <img class="icon" src="uploads/ga.png" /></small></em>
+					</p>
+				</div>
+			</div>
+		<span id="option_1_title" class="hidden">How's Everything?</span>
+		<span id="option_2_title" class="hidden">What's New?</span>
+		<span id="option_3_title" class="hidden">Why Now?</span>
+		<span id="option_1_subtitle" class="hidden">Daily Check-In</span>
+		<span id="option_2_subtitle" class="hidden">Upcoming Happenings</span>
+		<span id="option_3_subtitle" class="hidden">Today's Backstory</span>
+		<span id="option_1_description" class="hidden">Talk about what's been going on since your last visit.</span>
+		<span id="option_2_description" class="hidden">Find out about scheduled events and future plans.</span>
+		<span id="option_3_description" class="hidden">Behind the scenes of everything going on today.</span>
+		<span id="option_1_button_text" class="hidden">Check-In via Email</span>
+		<span id="option_2_button_text" class="hidden">More Daily Digest</span>
+		<span id="option_3_button_text" class="hidden">Deal of the Day</span>
+		<span id="option_1_button_url" class="hidden">#</span>
+		<span id="option_2_button_url" class="hidden">#</span>
+		<span id="option_3_button_url" class="hidden">#</span>
+		<span id="option_1_audio_url" class="hidden">https://02b7cf4.netsolhost.com/audio/mark_cuban_1.mp3</span>
+		<span id="option_2_audio_url" class="hidden">https://02b7cf4.netsolhost.com/audio/mark_cuban_2.mp3</span>
+		<span id="option_3_audio_url" class="hidden">https://02b7cf4.netsolhost.com/audio/mark_cuban_3.mp3</span>
+		<span id="welcome_audio_url" class="hidden">https://02b7cf4.netsolhost.com/audio/luka.php</span>
+		<span id="goodbye_audio_url" class="hidden">https://02b7cf4.netsolhost.com/audio/luka.php</span>
+		<span id="idk1_audio_url" class="hidden">https://02b7cf4.netsolhost.com/audio/luka.php</span>
+		<span id="idk2_audio_url" class="hidden">https://02b7cf4.netsolhost.com/audio/luka.php</span>
+	</form>
+	<nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+		<a class="navbar-brand" href="#"><img alt="Powered by Voicengage" src="http://02b7cf4.netsolhost.com/voicedestination/uploads/logo.jpg" class="admin" /></a>
+		<button class="navbar-toggler autosave admin" type="button"><i class="fa fa-save"></i></button>
+		<button class="navbar-toggler upload" type="button" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-upload"></i></button>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item site">
+					<a class="nav-link" class="backToTop" href="#top">Back to Top</a>
+				</li>
+				<li class="nav-item admin">
+					<a class="nav-link" data-toggle="modal" data-target="#newProject">Start a New Project</a>
+				</li>
+				<li class="nav-item active dropup admin">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Voice Destination<sup>&reg;</sup> Type <span class="sr-only">(current)</span></a>
+					<div class="dropdown-menu" aria-labelledby="dropdown10">
+						<a class="dropdown-item dest-type voice-ad" href="#" onclick="javascript:voiceAd()" data-toggle="collapse">Voice Ad</a>
+						<a class="dropdown-item dest-type daily-push" href="#" onclick="javascript:dailyPush()" data-toggle="collapse">Daily Push</a>
+						<a class="dropdown-item dest-type multi-tribe" href="#" onclick="javascript:multiTribe()" data-toggle="collapse">Multi-Tribe</a>
+					</div>
+				</li>
+				<li class="nav-item admin">
+					<a class="nav-link" href="#">General Settings</a>
+				</li>
+				<li class="nav-item multiTribe admin">
+					<a class="nav-link" href="#">Manage Tribes</a>
+				</li>
+				<li class="nav-item admin">
+					<a class="nav-link" href="#">Usage Reports</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#terms">Terms of Service</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#policy">Privacy Policy</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLongTitle">Publish Changes</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        All updates you have made here will be immediately available in your Voice Destination<sup>&reg;</sup>. This action cannot be undone.
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+	        <button type="button" class="btn btn-primary publish">Publish Changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade" id="newProject" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLongTitle">Start a New Project</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        All updates you have made here have been saved. Are you sure you're ready to leave?
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+	        <button type="button" class="btn btn-primary publish">Start New Project</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		const body = document.getElementById('body');
+		const cls = ["voice-ad", "daily-push", "multi-tribe"];
+
+		function voiceAd(){
+		document.getElementById('ga_name').value = 'Hey Google, Ask for the Deal of the Day from [Your Brand].';
+		for (let element of document.getElementsByClassName("intro")){element.style.display="none";}
+		for (let element of document.getElementsByClassName("dailyPush")){element.style.display="none";}
+		for (let element of document.getElementsByClassName("multiTribe")){element.style.display="none";}
+		for (let element of document.getElementsByClassName("voiceAd")){element.style.display="block";}
+		body.classList.remove(...cls);
+		body.classList.add('voice-ad');
+		}
+
+		function dailyPush(){
+		document.getElementById('ga_name').value = 'Hey Google, Ask [Your Brand] about [Something]';
+		for (let element of document.getElementsByClassName("intro")){element.style.display="none";}
+		for (let element of document.getElementsByClassName("voiceAd")){element.style.display="none";}
+		for (let element of document.getElementsByClassName("multiTribe")){element.style.display="none";}
+		for (let element of document.getElementsByClassName("dailyPush")){element.style.display="block";}
+		body.classList.remove(...cls);
+		body.classList.add('daily-push');			
+		}
+
+		function multiTribe(){
+		document.getElementById('ga_name').value = 'Hey Google, Ask [Your Brand] about [Something]';
+		for (let element of document.getElementsByClassName("intro")){element.style.display="none";}
+		for (let element of document.getElementsByClassName("voiceAd")){element.style.display="none";}
+		for (let element of document.getElementsByClassName("dailyPush")){element.style.display="block";}
+		for (let element of document.getElementsByClassName("multiTribe")){element.style.display="block";}				
+		body.classList.remove(...cls);
+		body.classList.add('multi-tribe');
+		}
+
+		$(document).ready(function() {
+			$('.backToTop').on('click',function() {
+				$('.navbar-collapse').collapse('hide');
+			});
+			$('.dest-type').on('click',function() {
+				$('.navbar-collapse').collapse('hide');
+				$('.toast').toast('show');
+			});
+			$('.autosave').on('click',function() {
+				$('.navbar-collapse').collapse('hide');
+				$('.toast').toast('show');
+				$('.autosave').hide();
+				$('.upload').show();
+			});
+			$('.publish').on('click',function() {
+				$('.navbar-collapse').collapse('hide');
+				$('.toast').toast('show');
+				$('.autosave').show();
+				$('.upload').hide();
+			});
+			$('#ga_name').change(function() {
+			  $('.ga_name').text($('#ga_name').val());
+			});			
+		});
+
+		const hash = window.location.hash;
+
+        if (hash === '#sales') {
+        	ytAudio();
+		} else if (hash === '#admin' || hash === '#new') {
+        	adminMode();
+		} else {
+			siteMode();
+		}
+
+		function ytAudio(){
+			$('.btn-audio').hide();
+			$('.yt').show();
+			$('.user').hide();
+			$('#title').text('Live on over 1 billion devices tomorrow.');
+		}
+
+		function adminMode(){
+			$('.admin').show();
+			$('.site').hide();
+		}
+
+		function siteMode(){
+			$('#title,.ga_name').text($('#ga_name').val());
+			$("iframe").attr("src", $('#ga_option_0_yt_audio').val());				
+			$('.site, iframe').show();
+			$("p").removeClass("mt-5");
+			$('#ga_option_0_button').attr("href", $('#ga_option_0_button_url').val()).removeAttr('data-toggle');
+			$('#ga_option_1_button').attr("href", $('#ga_option_1_button_url').val()).removeAttr('data-toggle');
+			$('#ga_option_2_button').attr("href", $('#ga_option_2_button_url').val()).removeAttr('data-toggle');
+			$('#ga_option_3_button').attr("href", $('#ga_option_3_button_url').val()).removeAttr('data-toggle');
+			$('#form input, #form select, #form textarea').attr('readonly', 'readonly');				
+			$('.admin').detach();
+		}
+
+		function openTarget() {
+		  var hash = location.hash.substring(1);
+		  if(hash) var details = document.getElementById(hash);
+		  if(details && details.tagName.toLowerCase() === 'details') details.open = true;
+		  $('.navbar-collapse').collapse('hide');
+
+		}
+
+		window.addEventListener('hashchange', openTarget);
+		openTarget();
+
+	</script>
+</body>
+</html>
